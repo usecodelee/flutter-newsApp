@@ -1,6 +1,10 @@
 # flutter-newsApp
 
-A new Flutter project.
+A Flutter project.
+
+![用户页](https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/1.png?raw=true)
+![新闻页](https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/2.png?raw=true)
+![笑话页](https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/3.png?raw=true)
 
 ## Getting Started
 
@@ -14,3 +18,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our  
 [online documentation](https://flutter.io/docs), which offers tutorials,  
 samples, guidance on mobile development, and a full API reference.
+
+## How to run
+
+> flutter run
