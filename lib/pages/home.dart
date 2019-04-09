@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import './other.dart';
 
-import './TopTabPages/TopTabPage_1.dart';
-import './TopTabPages/TopTabPage_2.dart';
-import './TopTabPages/TopTabPage_3.dart';
+import './news.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,44 +10,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  final List<Tab> _bottomTabs = <Tab>[
-    new Tab(text: 'Home',icon: new Icon(Icons.home),),    //icon和text的显示顺序已经内定，如需自定义，到child属性里面加吧
-    new Tab(icon: new Icon(Icons.history),text: 'History',),
-    new Tab(icon: new Icon(Icons.book),text: 'Book',),
-  ];
-  TabController _bottomNavigation;
-  @override
-  void initState() {
-    super.initState();
-    _bottomNavigation =
-        new TabController(vsync: this, length: _bottomTabs.length);
-  }
-
-  @override
-  void dispose() {
-    _bottomNavigation.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('新闻'),
       ),
-      body: new TabBarView(controller: _bottomNavigation, children: [
-        new News(data: '参数值'),
-        new TabPage2(),
-        new TabPage3(),
-      ]),
-      bottomNavigationBar: new Material(
-        color: Colors.blueAccent, //底部导航栏主题颜色
-        child: new TabBar(
-          controller: _bottomNavigation,
-          tabs: _bottomTabs,
-          indicatorColor: Colors.white, //tab标签的下划线颜色
-        ),
-      ),
+      body: new News(data: '参数值'),
       drawer: new Drawer(
         child: new ListView(
           children: <Widget>[
@@ -70,19 +37,27 @@ class _HomePageState extends State<HomePage>
                     image: new ExactAssetImage('imgs/bg.jpg')),
               ),
             ),
+             new ListTile(
+              title: new Text('新闻'),
+              trailing: new Icon(Icons.arrow_right),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed('/a');
+              },
+            ),
             new ListTile(
-              title: new Text('First Page'),
-              trailing: new Icon(Icons.arrow_upward),
+              title: new Text('每日一笑'),
+              trailing: new Icon(Icons.arrow_right),
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (BuildContext context) =>
-                        new OtherPage('1111111111111111')));
+                        new OtherPage('每日一笑')));
               },
             ),
             new ListTile(
               title: new Text('Second Page'),
-              trailing: new Icon(Icons.arrow_upward),
+              trailing: new Icon(Icons.arrow_right),
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(new MaterialPageRoute(
@@ -90,14 +65,7 @@ class _HomePageState extends State<HomePage>
                         new OtherPage('2222222222222222')));
               },
             ),
-            new ListTile(
-              title: new Text('th Page'),
-              trailing: new Icon(Icons.arrow_right),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).pushNamed('/a');
-              },
-            )
+           
           ],
         ),
       ),
