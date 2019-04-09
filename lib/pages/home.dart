@@ -1,22 +1,53 @@
 import 'package:flutter/material.dart';
 import './other.dart';
 
+import './TopTabPages/TopTabPage_1.dart';
+import './TopTabPages/TopTabPage_2.dart';
+import './TopTabPages/TopTabPage_3.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => new _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  final List<Tab> _bottomTabs = <Tab>[
+    new Tab(text: 'Home',icon: new Icon(Icons.home),),    //icon和text的显示顺序已经内定，如需自定义，到child属性里面加吧
+    new Tab(icon: new Icon(Icons.history),text: 'History',),
+    new Tab(icon: new Icon(Icons.book),text: 'Book',),
+  ];
+  TabController _bottomNavigation;
+  @override
+  void initState() {
+    super.initState();
+    _bottomNavigation =
+        new TabController(vsync: this, length: _bottomTabs.length);
+  }
+
+  @override
+  void dispose() {
+    _bottomNavigation.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('测试'),
+        title: new Text('新闻'),
       ),
-      body: new Center(
-        child: new Text(
-          'HomePage',
-          style: new TextStyle(fontSize: 40.0),
+      body: new TabBarView(controller: _bottomNavigation, children: [
+        new News(data: '参数值'),
+        new TabPage2(),
+        new TabPage3(),
+      ]),
+      bottomNavigationBar: new Material(
+        color: Colors.blueAccent, //底部导航栏主题颜色
+        child: new TabBar(
+          controller: _bottomNavigation,
+          tabs: _bottomTabs,
+          indicatorColor: Colors.white, //tab标签的下划线颜色
         ),
       ),
       drawer: new Drawer(
@@ -44,7 +75,9 @@ class _HomePageState extends State<HomePage> {
               trailing: new Icon(Icons.arrow_upward),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new OtherPage('1111111111111111')));
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        new OtherPage('1111111111111111')));
               },
             ),
             new ListTile(
@@ -53,8 +86,8 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (BuildContext context) => new OtherPage('2222222222222222')
-                ));
+                    builder: (BuildContext context) =>
+                        new OtherPage('2222222222222222')));
               },
             ),
             new ListTile(
