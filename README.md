@@ -2,9 +2,9 @@
 
 A Flutter project.
 
-![用户页](https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/1.png?raw=true)
-![新闻页](https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/2.png?raw=true)
-![笑话页](https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/3.png?raw=true)
+<img src="https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/1.png?raw=true" width="250"/>
+<img src="https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/2.png?raw=true" width="250"/>
+<img src="https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/3.png?raw=true" width="250"/>
 
 ## Getting Started
 
