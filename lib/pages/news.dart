@@ -88,7 +88,7 @@ class _NewsListState extends State<NewsList>{
   //HTTP请求的函数返回值为异步控件Future
   Future<String> get(String category) async {
     var httpClient = new HttpClient();
-    var request = await httpClient.getUrl(Uri.parse('${_url}type=$category&key=3a86f36bd3ecac8a51135ded5eebe862'));  
+    var request = await httpClient.getUrl(Uri.parse('${_url}type=$category&key=7f960840f8f3ec5aa60962ae5bf5df3c'));  
     var response = await request.close();
     return await response.transform(utf8.decoder).join();
   }

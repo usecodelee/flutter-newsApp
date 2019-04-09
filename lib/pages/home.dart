@@ -55,16 +55,16 @@ class _HomePageState extends State<HomePage>
                         new OtherPage('每日一笑')));
               },
             ),
-            new ListTile(
-              title: new Text('Second Page'),
-              trailing: new Icon(Icons.arrow_right),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                        new OtherPage('2222222222222222')));
-              },
-            ),
+            // new ListTile(
+            //   title: new Text('天气情况'),
+            //   trailing: new Icon(Icons.arrow_right),
+            //   onTap: () {
+            //     Navigator.of(context).pop();
+            //     Navigator.of(context).push(new MaterialPageRoute(
+            //         builder: (BuildContext context) =>
+            //             new OtherPage('天气情况')));
+            //   },
+            // ),
            
           ],
         ),
