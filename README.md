@@ -2,9 +2,7 @@
 
 A Flutter project.
 
-<img src="https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/1.png?raw=true" width="250"/>
-<img src="https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/2.png?raw=true" width="250"/>
-<img src="https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/3.png?raw=true" width="250"/>
+<img src="https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/1.png?raw=true" width="250"/><img src="https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/2.png?raw=true" width="250"/><img src="https://github.com/usecodelee/flutter-newsApp/blob/master/rmimgs/3.png?raw=true" width="250"/>
 
 ## Getting Started
 
